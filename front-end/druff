@@ -1,0 +1,15 @@
+
+User api featch******************************
+
+pages/hospitals/hospitalTable/-(62)-          hospital api(_id,name,email,address,available_vaccine)
+
+pages/vaccines/vaccineTable-(59)-             vccine api-(_id,name,quantity,type,hospital)
+
+
+pages/myVaccines/myVaccinesTable-(62)-        myVaccine api(_id,doses,date,name,hospital)
+
+
+
+Hospital Api fetch**********************************
+
+pagesHospital/users/usersTable-(66)-            user api(_id,first_name,last_name,email,mobile_no,gender,age,address.hospital)

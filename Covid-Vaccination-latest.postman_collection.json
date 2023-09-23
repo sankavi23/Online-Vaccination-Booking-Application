@@ -1,0 +1,660 @@
+{
+	"info": {
+		"_postman_id": "a4632033-791f-4fb2-8c56-b22df9e9403c",
+		"name": "Covid-Vaccination",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16611545"
+	},
+	"item": [
+		{
+			"name": "Vaccine",
+			"item": [
+				{
+					"name": "Get All Vaccines",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://localhost:4000/covid-vaccination/api/v1/vaccine",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"covid-vaccination",
+								"api",
+								"v1",
+								"vaccine"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Vaccine",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"vaccineName\": \"abcde\",\r\n    \"vaccineType\": \"Phizor\",\r\n    \"vaccineStatus\": \"AVAILABLE\",\r\n    \"hospitalId\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/covid-vaccination/api/v1/vaccine",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"covid-vaccination",
+								"api",
+								"v1",
+								"vaccine"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Vaccine By Id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "http://localhost:4000/covid-vaccination/api/v1/vaccine/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"covid-vaccination",
+								"api",
+								"v1",
+								"vaccine",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "View My Vaccine",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/covid-vaccination/api/v1/appointment/user/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"covid-vaccination",
+								"api",
+								"v1",
+								"appointment",
+								"user",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Vaccine Search",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/covid-vaccination/api/v1/vaccine/search?page=0&size=10&name=",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"covid-vaccination",
+								"api",
+								"v1",
+								"vaccine",
+								"search"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								},
+								{
+									"key": "name",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Vaccine Detail",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 6,\r\n    \"vaccineName\": \"abcdef\",\r\n    \"vaccineType\": \"Phizor\",\r\n    \"vaccineStatus\": \"AVAILABLE\",\r\n    \"hospitalId\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/covid-vaccination/api/v1/vaccine",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"covid-vaccination",
+								"api",
+								"v1",
+								"vaccine"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User | Hospital",
+			"item": [
+				{
+					"name": "Sign Up User | Hospital",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"rishi004@gmail.com\",\r\n    \"regNumber\": \"H004\",\r\n    \"password\": \"rishi004\",\r\n    \"firstName\": \"Rishi004H\",\r\n    \"lastName\": \"Rishi\",\r\n    \"gender\": \"Male\",\r\n    \"age\": null,\r\n    \"phoneNumber\": \"1231231231\",\r\n    \"roleName\": \"HOSPITAL\",\r\n    \"address\": \"Point-Pedro, Jaffna\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/covid-vaccination/api/v1/user/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"covid-vaccination",
+								"api",
+								"v1",
+								"user",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"rishi002@gmail.com\",\r\n    \"password\": \"rishi002H\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/covid-vaccination/api/v1/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"covid-vaccination",
+								"api",
+								"v1",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/covid-vaccination/api/v1/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"covid-vaccination",
+								"api",
+								"v1",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Users By Role",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/covid-vaccination/api/v1/user/role/hospital",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"covid-vaccination",
+								"api",
+								"v1",
+								"user",
+								"role",
+								"hospital"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "View User By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/covid-vaccination/api/v1/user/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"covid-vaccination",
+								"api",
+								"v1",
+								"user",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "View User By Email",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/covid-vaccination/api/v1/user/mail/rishi@gmail.com",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"covid-vaccination",
+								"api",
+								"v1",
+								"user",
+								"mail",
+								"rishi@gmail.com"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User By Id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/covid-vaccination/api/v1/user/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"covid-vaccination",
+								"api",
+								"v1",
+								"user",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit User",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 7,\r\n    \"email\": \"rishi002@gmail.com\",\r\n    \"regNumber\": \"H0002\",\r\n    \"firstName\": \"Rishi002H\",\r\n    \"lastName\": \"Rishi\",\r\n    \"gender\": \"Male\",\r\n    \"age\": null,\r\n    \"phoneNumber\": \"1231231231\",\r\n    \"roleName\": \"HOSPITAL\",\r\n    \"address\": \"Point-Pedro, Jaffna\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/covid-vaccination/api/v1/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"covid-vaccination",
+								"api",
+								"v1",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Search",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/covid-vaccination/api/v1/user/search?page=0&size=10&name=&role=hospital",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"covid-vaccination",
+								"api",
+								"v1",
+								"user",
+								"search"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								},
+								{
+									"key": "name",
+									"value": ""
+								},
+								{
+									"key": "role",
+									"value": "hospital"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Change Password",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 7,\r\n    \"oldPassword\": \"rishi002\",\r\n    \"newPassword\": \"rishi002H\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/covid-vaccination/api/v1/user/changePassword",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"covid-vaccination",
+								"api",
+								"v1",
+								"user",
+								"changePassword"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Appointments",
+			"item": [
+				{
+					"name": "Add Appointment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"hospitalId\": 7,\r\n    \"userId\": 4,\r\n    \"vaccineType\": \"Phizor\",\r\n    \"appointmentDate\": \"2022-03-21\",\r\n    \"appointmentTime\": \"10:25:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/covid-vaccination/api/v1/appointment",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"covid-vaccination",
+								"api",
+								"v1",
+								"appointment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "View Appointment By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/covid-vaccination/api/v1/appointment/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"covid-vaccination",
+								"api",
+								"v1",
+								"appointment",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Appointment By Id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/covid-vaccination/api/v1/appointment/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"covid-vaccination",
+								"api",
+								"v1",
+								"appointment",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Appointment",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 7,\r\n    \"hospitalId\": 7,\r\n    \"userId\": 4,\r\n    \"vaccineType\": \"Phizor\",\r\n    \"appointmentDate\": \"2022-03-25\",\r\n    \"appointmentTime\": \"10:25:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/covid-vaccination/api/v1/appointment",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"covid-vaccination",
+								"api",
+								"v1",
+								"appointment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Appointments Search By User Id | Hospital",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/covid-vaccination/api/v1/appointment/search?page=0&size=10&userId=4&hospital=RishiH",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"covid-vaccination",
+								"api",
+								"v1",
+								"appointment",
+								"search"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								},
+								{
+									"key": "userId",
+									"value": "4"
+								},
+								{
+									"key": "hospital",
+									"value": "RishiH"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Appointments By User Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/covid-vaccination/api/v1/appointment/user/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"covid-vaccination",
+								"api",
+								"v1",
+								"appointment",
+								"user",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
